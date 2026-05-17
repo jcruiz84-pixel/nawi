@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lección 1 — Aprende a presentarte</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lesson.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="lesson-container" id="lesson-container">
+        <!-- Top bar with close + progress -->
+        <div class="lesson-top-bar">
+            <button class="lesson-close-btn" id="lesson-close">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+            </button>
+            <div class="progress-bar-track">
+                <div class="progress-bar-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Exercise Area (dynamically filled) -->
+        <div class="exercise-area" id="exercise-area">
+            <!-- Content injected by JS -->
+        </div>
+
+        <!-- Bottom bar with COMPROBAR button -->
+        <div class="lesson-bottom-bar" id="bottom-bar">
+            <button class="check-btn disabled" id="check-btn" disabled>COMPROBAR</button>
+        </div>
+
+        <!-- Feedback overlay -->
+        <div class="feedback-bar hidden" id="feedback-bar">
+            <div class="feedback-icon" id="feedback-icon"></div>
+            <div class="feedback-text" id="feedback-text"></div>
+            <button class="continue-btn" id="continue-btn">CONTINUAR</button>
+        </div>
+    </div>
+
+    <!-- Lesson Complete screen -->
+    <div class="lesson-complete hidden" id="lesson-complete">
+        <div class="complete-content">
+            <img src="Ffeliz.svg" alt="Feliz" class="complete-character">
+            <h2 class="complete-title">¡Lección completada!</h2>
+            <p class="complete-subtitle">Has terminado la lección<br>"Aprende a presentarte"</p>
+            <div class="complete-stats">
+                <div class="complete-stat">
+                    <span class="stat-value" id="score-value">0</span>
+                    <span class="stat-desc">Aciertos</span>
+                </div>
+                <div class="complete-stat">
+                    <span class="stat-value" id="total-value">0</span>
+                    <span class="stat-desc">Total</span>
+                </div>
+            </div>
+            <button class="complete-btn" id="complete-btn">CONTINUAR</button>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="dictionary_data.js"></script>
+    <script src="lesson.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+
+Sección 1: Unir (Matching)
+Une la frase en Nawat con su traducción correcta.
+	1	Yek peyna — Buenos días
+	2	Ken mutukey? — ¿Cómo te llamas?
+	3	Padiush — Gracias
+	4	Niawa! — ¡Ya me voy!
+	5	Ken tinemi? — ¿Cómo estás?
+	6	Kuskatan — El Salvador
+	7	Tesu datka — De nada / No es nada
+	8	Yek tiutak — Buenas tardes
+	9	Timuitat musta — Nos vemos mañana
+	10	Muchan — Tu hogar/casa
+
+Sección 2: Completar la oración (Multiple Choice)
+Elige la opción correcta para completar la idea.
+	11	Naja _______ Sixta. (Mi nombre es...)
+	◦	A) ninemi
+	◦	B) nutukey (Respuesta correcta)
+	12	_______ taja? (¿Y tú?)
+	◦	A) Wan (Respuesta correcta)
+	◦	B) Kan
+	13	Naja niwitz _______ Witzapan. (Yo vengo de...)
+	◦	A) tik
+	◦	B) ka (Respuesta correcta)
+	14	Tay _______ muyulu? (¿Qué dice tu corazón? / ¿Cómo estás?)
+	◦	A) ina (Respuesta correcta)
+	◦	B) yek
+	15	Naja ninemi _______ yek. (Yo estoy muy bien)
+	◦	A) chupi
+	◦	B) sujsul (Respuesta correcta)
+	16	Wan nutzuntukey _______. (Y mi apellido es...)
+	◦	A) niwitz
+	◦	B) Pérez (Respuesta correcta - ejemplo de apellido)
+	17	_______ nemi muchan? (¿Dónde está tu hogar?)
+	◦	A) Kan (Respuesta correcta)
+	◦	B) Ken
+	18	_______ nuyulu. (Mi corazón está alegre)
+	◦	A) Paki (Respuesta correcta)
+	◦	B) Chuka
+	19	Nuchan nemi tik ne _______. (Mi hogar está en el pueblo...)
+	◦	A) tajpalulis
+	◦	B) techan (Respuesta correcta)
+	20	_______ tiwalajtuk! (Bienvenido/a)
+	◦	A) Yek (Respuesta correcta)
+	◦	B) Niawa
+	21	Nuteku Tiut ma metz**_______**. (Que Dios te cuide)
+	◦	A) tajpia (Respuesta correcta)
+	◦	B) tinemi
+	22	_______ timuitat musta! (Con seguridad nos vemos mañana)
+	◦	A) Yajaya (Respuesta correcta)
+	◦	B) Man
+	23	_______ nuyulu. (Mi corazón está llorando/triste)
+	◦	A) Chuka (Respuesta correcta)
+	◦	B) Yuyumuka
+	24	Naja ninemi _______ yek. (Estoy un poco bien)
+	◦	A) sujsul
+	◦	B) chupi (Respuesta correcta)
+	25	_______ nuyulu nemi yek. (Mi corazón está bien)
+	◦	A) Naja
+	◦	B) Na' / Nuyulu (Respuesta correcta: Nuyulu)
+
+Sección 3: Traducción Nawat a Español
+Escribe lo que significa la frase.
+	26	"Naja niwitz ka Kuskatan"
+	◦	Respuesta: Yo vengo de El Salvador.
+	27	"Ken tinemi taja?"
+	◦	Respuesta: ¿Cómo estás tú?
+	28	"Yek tajkutunal"
+	◦	Respuesta: Buen mediodía.
+	29	"Tasujkamati!"
+	◦	Respuesta: ¡Gracias!
+	30	"Naja ninemi yek"
+	◦	Respuesta: Yo estoy bien.
+	31	"Tay ina muyulu?"
+	◦	Respuesta: ¿Qué dice tu corazón? (¿Cómo te sientes?)
+	32	"Shiawa!"
+	◦	Respuesta: ¡Vete! / ¡Adiós! (dicho al que se va).
+	33	"Weliajaya timuitat"
+	◦	Respuesta: Ojalá nos veamos.
+	34	"Panpadiush"
+	◦	Respuesta: Muchas gracias.
+	35	"Yuyumuka nuyulu"
+	◦	Respuesta: Mi corazón está emocionado (siente cosquilleo).
+	36	"Ne tajpalulis"
+	◦	Respuesta: El saludo.
+	37	"Man timuitat"
+	◦	Respuesta: Ahí nos vemos.
+	38	"Nuteku Tiut ma metztashtawi"
+	◦	Respuesta: Que Dios te lo pague.
+
+Sección 4: Traducción Español a Nawat
+¿Cómo dirías esto en Nawat?
+	39	"Mi apellido es..."
+	◦	Respuesta: Wan nutzuntukey...
+	40	"¿Dónde vives?"
+	◦	Respuesta: ¿Kan nemi muchan?
+	41	"Buenas noches"
+	◦	Respuesta: Yek tayua.
+	42	"Muchas gracias / Te lo agradezco"
+	◦	Respuesta: Tashtawi! / Panpadiush!
+	43	"Estoy muy bien"
+	◦	Respuesta: Ninemi sujsul yek.
+	44	"Yo soy de..."
+	◦	Respuesta: Naja niwitz ka...
+	45	"¿Cómo te llamas?"
+	◦	Respuesta: ¿Ken mutukey?
+	46	"Nos vemos, pues"
+	◦	Respuesta: Timuitat tel.
+	47	"Mi hogar está en la ciudad"
+	◦	Respuesta: Nuchan nemi tik ne techan.
+	48	"Bienvenido (llegaste bien)"
+	◦	Respuesta: Yek tiwalajtuk.
+	49	"Mi corazón está bien"
+	◦	Respuesta: Nuyulu nemi yek.
+	50	"¡Adiós! (Me voy)"
+	◦	Respuesta: Niawa!
+Sección 1: Unir (Nawat - Español)
+Une el término con su significado correcto.
+	1	Na' — Yo (forma corta)
+	2	Ta' — Tú / Vos (forma corta)
+	3	Witzapan — Santo Domingo de Guzmán
+	4	Techan — Pueblo o ciudad
+	5	Tajtzin — Señor / Don
+	6	Nantzin — Señora / Doña
+	7	Weliajaya — Ojalá / Primero Dios
+	8	Timuitat tel — Nos vemos, pues
+	9	Yek anwalajtiwit — Bienvenidos (a varios)
+	10	Nuteku Tiut — Mi Dios (lit. Mi padre Dios)
+
+Sección 2: Elección Múltiple (Gramática y Contexto)
+Elige la opción que complete correctamente el sentido de la frase.
+	11	¿_______ tiwitz? (¿De dónde vienes?)
+	◦	A) Kan
+	◦	B) Kanka (Correcta)
+	12	Naja _______ niwitz ka Witzapan. (Yo también vengo de...)
+	◦	A) nusan (Correcta)
+	◦	B) san
+	13	Yek _______, tamachtiani! (¡Buenos días, profesor!)
+	◦	A) tiutak
+	◦	B) peyna (Correcta)
+	14	_______ sa' niwetzi. (No vaya a ser que me caiga.)
+	◦	A) Ma' (Correcta)
+	◦	B) Maka
+	15	Na' ninemi _______ yek. (Yo estoy un poco bien.)
+	◦	A) chupi (Correcta)
+	◦	B) sujsul
+	16	Nuchan nemi _______ ne techan. (Mi hogar está en el pueblo.)
+	◦	A) ka
+	◦	B) tik (Correcta)
+	17	Nuteku Tiut ma metz_______! (¡Que Dios te ayude!)
+	◦	A) palewi (Correcta)
+	◦	B) tashtawi
+	18	_______, nikneki. (Sí, quiero.)
+	◦	A) Eje (Correcta)
+	◦	B) Tesu
+	19	¿Tay _______ muyulu? (¿Qué dice tu corazón?)
+	◦	A) ina (Correcta)
+	◦	B) yek
+	20	Naja _______ nimumachtia Nawat. (Yo quiero aprender Nawat.)
+	◦	A) nikmati
+	◦	B) nikneki (Correcta)
+	21	_______ peyna. (Mañana por la mañana.)
+	◦	A) Musta (Correcta)
+	◦	B) Yalua
+	22	Naja _______ Sixta. (Yo me llamo Sixta.)
+	◦	A) nutzuntukey
+	◦	B) nutukey (Correcta)
+	23	¿_______ tinemi? (¿Cómo estás?)
+	◦	A) Kan
+	◦	B) Ken (Correcta)
+	24	Na' ninemi sujsul _______. (Yo estoy muy bien.)
+	◦	A) yek (Correcta)
+	◦	B) chuka
+	25	Shu _______! (¡Que te vaya bien!)
+	◦	A) yek (Correcta)
+	◦	B) peyna
+
+Sección 3: Traducción de Nawat a Español
+Escribe el significado de las siguientes expresiones.
+	26	"Yek tayua" — Buenas noches.
+	27	"Tesu datka" — De nada.
+	28	"Ken mutukey taja?" — ¿Cómo te llamas tú?
+	29	"Nuyulu nemi yek" — Mi corazón está bien.
+	30	"Paki nuyulu" — Mi corazón está alegre.
+	31	"Witzapan nuchan" — Mi hogar es Santo Domingo de Guzmán.
+	32	"Payush, tajtzin" — Gracias, señor.
+	33	"Timuitat musta" — Nos vemos mañana.
+	34	"Naja niwitz ka Kuskatan" — Yo vengo de El Salvador.
+	35	"Yek tajkutunal" — Buen mediodía.
+	36	"Shiawa!" — ¡Vete! / ¡Adiós! (al que se va).
+	37	"Ken tinemi taja?" — ¿Cómo estás tú?
+
+Sección 4: Traducción de Español a Nawat
+¿Cómo se dice esto en Nawat?
+	38	"¡Muchas gracias!" — ¡Panpadiush!
+	39	"Mi apellido es..." — Wan nutzuntukey...
+	40	"¿Y tú?" — Wan taja?
+	41	"¿Dónde está tu casa?" — ¿Kan nemi muchan?
+	42	"Estoy muy bien" — Ninemi sujsul yek.
+	43	"Bienvenido" — Yek tiwalajtuk.
+	44	"Mi corazón está triste/llorando" — Chuka nuyulu.
+	45	"Ojalá nos veamos mañana" — Weliajaya timuitat musta.
+	46	"Ahí nos vemos" — Man timuitat.
+	47	"¡Ya me voy!" — ¡Niawa!
+	48	"Yo vengo de El Salvador" — Naja niwitz ka Kuskatan.
+	49	"Que Dios te cuide" — Nuteku Tiut ma metztajpia.
+	50	"Mi corazón está emocionado" — Yuyumuka nuyulu.
+
+

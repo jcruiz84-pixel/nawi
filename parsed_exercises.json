@@ -1,0 +1,2994 @@
+[
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Buenos días",
+    "character": "Neutral.svg",
+    "correct": [
+      "Yek",
+      "peyna"
+    ],
+    "wordBank": [
+      "Yek",
+      "peyna",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "¿Cómo te llamas?",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ken",
+      "mutukey?"
+    ],
+    "wordBank": [
+      "Ken",
+      "mutukey?",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Gracias",
+    "character": "Neutral.svg",
+    "correct": [
+      "Padiush"
+    ],
+    "wordBank": [
+      "Padiush",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "¡Ya me voy!",
+    "character": "Neutral.svg",
+    "correct": [
+      "Niawa!"
+    ],
+    "wordBank": [
+      "Niawa!",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "¿Cómo estás?",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ken",
+      "tinemi?"
+    ],
+    "wordBank": [
+      "Ken",
+      "tinemi?",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "El Salvador",
+    "character": "Neutral.svg",
+    "correct": [
+      "Kuskatan"
+    ],
+    "wordBank": [
+      "Kuskatan",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "De nada / No es nada",
+    "character": "Neutral.svg",
+    "correct": [
+      "Tesu",
+      "datka"
+    ],
+    "wordBank": [
+      "Tesu",
+      "datka",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Buenas tardes",
+    "character": "Neutral.svg",
+    "correct": [
+      "Yek",
+      "tiutak"
+    ],
+    "wordBank": [
+      "Yek",
+      "tiutak",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Nos vemos mañana",
+    "character": "Neutral.svg",
+    "correct": [
+      "Timuitat",
+      "musta"
+    ],
+    "wordBank": [
+      "Timuitat",
+      "musta",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Tu hogar/casa",
+    "character": "Neutral.svg",
+    "correct": [
+      "Muchan"
+    ],
+    "wordBank": [
+      "Muchan",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Naja",
+    "after": "Sixta. (Mi nombre es...)",
+    "correct": "B) nutukey",
+    "options": [
+      "A) ninemi",
+      "B) nutukey"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "",
+    "after": "taja? (¿Y tú?)",
+    "correct": "A) Wan",
+    "options": [
+      "A) Wan",
+      "B) Kan"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Naja niwitz",
+    "after": "Witzapan. (Yo vengo de...)",
+    "correct": "B) ka",
+    "options": [
+      "A) tik",
+      "B) ka"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Tay",
+    "after": "muyulu? (¿Qué dice tu corazón? / ¿Cómo estás?)",
+    "correct": "A) ina",
+    "options": [
+      "A) ina",
+      "B) yek"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Naja ninemi",
+    "after": "yek. (Yo estoy muy bien)",
+    "correct": "B) sujsul",
+    "options": [
+      "A) chupi",
+      "B) sujsul"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Wan nutzuntukey",
+    "after": ". (Y mi apellido es...)",
+    "correct": "B) Pérez",
+    "options": [
+      "A) niwitz",
+      "B) Pérez"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "",
+    "after": "nemi muchan? (¿Dónde está tu hogar?)",
+    "correct": "A) Kan",
+    "options": [
+      "A) Kan",
+      "B) Ken"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "",
+    "after": "nuyulu. (Mi corazón está alegre)",
+    "correct": "A) Paki",
+    "options": [
+      "A) Paki",
+      "B) Chuka"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Nuchan nemi tik ne",
+    "after": ". (Mi hogar está en el pueblo...)",
+    "correct": "B) techan",
+    "options": [
+      "A) tajpalulis",
+      "B) techan"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "",
+    "after": "tiwalajtuk! (Bienvenido/a)",
+    "correct": "A) Yek",
+    "options": [
+      "A) Yek",
+      "B) Niawa"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Nuteku Tiut ma metz**",
+    "after": "**. (Que Dios te cuide)",
+    "correct": "A) tajpia",
+    "options": [
+      "A) tajpia",
+      "B) tinemi"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "",
+    "after": "timuitat musta! (Con seguridad nos vemos mañana)",
+    "correct": "A) Yajaya",
+    "options": [
+      "A) Yajaya",
+      "B) Man"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "",
+    "after": "nuyulu. (Mi corazón está llorando/triste)",
+    "correct": "A) Chuka",
+    "options": [
+      "A) Chuka",
+      "B) Yuyumuka"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Naja ninemi",
+    "after": "yek. (Estoy un poco bien)",
+    "correct": "B) chupi",
+    "options": [
+      "A) sujsul",
+      "B) chupi"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "",
+    "after": "nuyulu nemi yek. (Mi corazón está bien)",
+    "correct": "B) Na' / Nuyulu",
+    "options": [
+      "A) Naja",
+      "B) Na' / Nuyulu"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Naja niwitz ka Kuskatan\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Yo vengo de El Salvador."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Ken tinemi taja?\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: ¿Cómo estás tú?"
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Yek tajkutunal\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Buen mediodía."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Tasujkamati!\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: ¡Gracias!"
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Naja ninemi yek\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Yo estoy bien."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Tay ina muyulu?\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: ¿Qué dice tu corazón? (¿Cómo te sientes?)"
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Shiawa!\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: ¡Vete! / ¡Adiós! (dicho al que se va)."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Weliajaya timuitat\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Ojalá nos veamos."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Panpadiush\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Muchas gracias."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Yuyumuka nuyulu\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Mi corazón está emocionado (siente cosquilleo)."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Ne tajpalulis\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: El saludo."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Man timuitat\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Ahí nos vemos."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Nuteku Tiut ma metztashtawi\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Que Dios te lo pague."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Mi apellido es...\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Wan nutzuntukey..."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"¿Dónde vives?\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: ¿Kan nemi muchan?"
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Buenas noches\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Yek tayua."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Muchas gracias / Te lo agradezco\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Tashtawi! / Panpadiush!"
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Estoy muy bien\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Ninemi sujsul yek."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Yo soy de...\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Naja niwitz ka..."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"¿Cómo te llamas?\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: ¿Ken mutukey?"
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Nos vemos, pues\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Timuitat tel."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Mi hogar está en la ciudad\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Nuchan nemi tik ne techan."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Bienvenido (llegaste bien)\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Yek tiwalajtuk."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"Mi corazón está bien\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Nuyulu nemi yek."
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 1,
+    "prompt": "\"¡Adiós! (Me voy)\"",
+    "character": "Neutral.svg",
+    "correct": null,
+    "options": [
+      "Respuesta: Niawa!"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Yo (forma corta)",
+    "character": "Neutral.svg",
+    "correct": [
+      "Na'"
+    ],
+    "wordBank": [
+      "Na'",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Tú / Vos (forma corta)",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ta'"
+    ],
+    "wordBank": [
+      "Ta'",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Santo Domingo de Guzmán",
+    "character": "Neutral.svg",
+    "correct": [
+      "Witzapan"
+    ],
+    "wordBank": [
+      "Witzapan",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Pueblo o ciudad",
+    "character": "Neutral.svg",
+    "correct": [
+      "Techan"
+    ],
+    "wordBank": [
+      "Techan",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Señor / Don",
+    "character": "Neutral.svg",
+    "correct": [
+      "Tajtzin"
+    ],
+    "wordBank": [
+      "Tajtzin",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Señora / Doña",
+    "character": "Neutral.svg",
+    "correct": [
+      "Nantzin"
+    ],
+    "wordBank": [
+      "Nantzin",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Ojalá / Primero Dios",
+    "character": "Neutral.svg",
+    "correct": [
+      "Weliajaya"
+    ],
+    "wordBank": [
+      "Weliajaya",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Nos vemos, pues",
+    "character": "Neutral.svg",
+    "correct": [
+      "Timuitat",
+      "tel"
+    ],
+    "wordBank": [
+      "Timuitat",
+      "tel",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Bienvenidos (a varios)",
+    "character": "Neutral.svg",
+    "correct": [
+      "Yek",
+      "anwalajtiwit"
+    ],
+    "wordBank": [
+      "Yek",
+      "anwalajtiwit",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Mi Dios (lit. Mi padre Dios)",
+    "character": "Neutral.svg",
+    "correct": [
+      "Nuteku",
+      "Tiut"
+    ],
+    "wordBank": [
+      "Nuteku",
+      "Tiut",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "¿",
+    "after": "tiwitz? (¿De dónde vienes?)",
+    "correct": "B) Kanka",
+    "options": [
+      "A) Kan",
+      "B) Kanka"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Naja",
+    "after": "niwitz ka Witzapan. (Yo también vengo de...)",
+    "correct": "A) nusan",
+    "options": [
+      "A) nusan",
+      "B) san"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Yek",
+    "after": ", tamachtiani! (¡Buenos días, profesor!)",
+    "correct": "B) peyna",
+    "options": [
+      "A) tiutak",
+      "B) peyna"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "",
+    "after": "sa' niwetzi. (No vaya a ser que me caiga.)",
+    "correct": "A) Ma'",
+    "options": [
+      "A) Ma'",
+      "B) Maka"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Na' ninemi",
+    "after": "yek. (Yo estoy un poco bien.)",
+    "correct": "A) chupi",
+    "options": [
+      "A) chupi",
+      "B) sujsul"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Nuchan nemi",
+    "after": "ne techan. (Mi hogar está en el pueblo.)",
+    "correct": "B) tik",
+    "options": [
+      "A) ka",
+      "B) tik"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Nuteku Tiut ma metz",
+    "after": "! (¡Que Dios te ayude!)",
+    "correct": "A) palewi",
+    "options": [
+      "A) palewi",
+      "B) tashtawi"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "",
+    "after": ", nikneki. (Sí, quiero.)",
+    "correct": "A) Eje",
+    "options": [
+      "A) Eje",
+      "B) Tesu"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "¿Tay",
+    "after": "muyulu? (¿Qué dice tu corazón?)",
+    "correct": "A) ina",
+    "options": [
+      "A) ina",
+      "B) yek"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Naja",
+    "after": "nimumachtia Nawat. (Yo quiero aprender Nawat.)",
+    "correct": "B) nikneki",
+    "options": [
+      "A) nikmati",
+      "B) nikneki"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "",
+    "after": "peyna. (Mañana por la mañana.)",
+    "correct": "A) Musta",
+    "options": [
+      "A) Musta",
+      "B) Yalua"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Naja",
+    "after": "Sixta. (Yo me llamo Sixta.)",
+    "correct": "B) nutukey",
+    "options": [
+      "A) nutzuntukey",
+      "B) nutukey"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "¿",
+    "after": "tinemi? (¿Cómo estás?)",
+    "correct": "B) Ken",
+    "options": [
+      "A) Kan",
+      "B) Ken"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Na' ninemi sujsul",
+    "after": ". (Yo estoy muy bien.)",
+    "correct": "A) yek",
+    "options": [
+      "A) yek",
+      "B) chuka"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 1,
+    "before": "Shu",
+    "after": "! (¡Que te vaya bien!)",
+    "correct": "A) yek",
+    "options": [
+      "A) yek",
+      "B) peyna"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Buenas noches.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Yek",
+      "tayua"
+    ],
+    "wordBank": [
+      "Yek",
+      "tayua",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "De nada.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Tesu",
+      "datka"
+    ],
+    "wordBank": [
+      "Tesu",
+      "datka",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "¿Cómo te llamas tú?",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ken",
+      "mutukey",
+      "taja?"
+    ],
+    "wordBank": [
+      "Ken",
+      "mutukey",
+      "taja?",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Mi corazón está bien.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Nuyulu",
+      "nemi",
+      "yek"
+    ],
+    "wordBank": [
+      "Nuyulu",
+      "nemi",
+      "yek",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Mi corazón está alegre.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Paki",
+      "nuyulu"
+    ],
+    "wordBank": [
+      "Paki",
+      "nuyulu",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Mi hogar es Santo Domingo de Guzmán.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Witzapan",
+      "nuchan"
+    ],
+    "wordBank": [
+      "Witzapan",
+      "nuchan",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Gracias, señor.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Payush,",
+      "tajtzin"
+    ],
+    "wordBank": [
+      "Payush,",
+      "tajtzin",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Nos vemos mañana.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Timuitat",
+      "musta"
+    ],
+    "wordBank": [
+      "Timuitat",
+      "musta",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Yo vengo de El Salvador.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Naja",
+      "niwitz",
+      "ka",
+      "Kuskatan"
+    ],
+    "wordBank": [
+      "Naja",
+      "niwitz",
+      "ka",
+      "Kuskatan",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Buen mediodía.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Yek",
+      "tajkutunal"
+    ],
+    "wordBank": [
+      "Yek",
+      "tajkutunal",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "¡Vete! / ¡Adiós! (al que se va).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Shiawa!"
+    ],
+    "wordBank": [
+      "Shiawa!",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "¿Cómo estás tú?",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ken",
+      "tinemi",
+      "taja?"
+    ],
+    "wordBank": [
+      "Ken",
+      "tinemi",
+      "taja?",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "¡Panpadiush!",
+    "character": "Neutral.svg",
+    "correct": [
+      "¡Muchas",
+      "gracias!"
+    ],
+    "wordBank": [
+      "¡Muchas",
+      "gracias!",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Wan nutzuntukey...",
+    "character": "Neutral.svg",
+    "correct": [
+      "Mi",
+      "apellido",
+      "es..."
+    ],
+    "wordBank": [
+      "Mi",
+      "apellido",
+      "es...",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Wan taja?",
+    "character": "Neutral.svg",
+    "correct": [
+      "¿Y",
+      "tú?"
+    ],
+    "wordBank": [
+      "¿Y",
+      "tú?",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "¿Kan nemi muchan?",
+    "character": "Neutral.svg",
+    "correct": [
+      "¿Dónde",
+      "está",
+      "tu",
+      "casa?"
+    ],
+    "wordBank": [
+      "¿Dónde",
+      "está",
+      "tu",
+      "casa?",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Ninemi sujsul yek.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Estoy",
+      "muy",
+      "bien"
+    ],
+    "wordBank": [
+      "Estoy",
+      "muy",
+      "bien",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Yek tiwalajtuk.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Bienvenido"
+    ],
+    "wordBank": [
+      "Bienvenido",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Chuka nuyulu.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Mi",
+      "corazón",
+      "está",
+      "triste/llorando"
+    ],
+    "wordBank": [
+      "Mi",
+      "corazón",
+      "está",
+      "triste/llorando",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Weliajaya timuitat musta.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ojalá",
+      "nos",
+      "veamos",
+      "mañana"
+    ],
+    "wordBank": [
+      "Ojalá",
+      "nos",
+      "veamos",
+      "mañana",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Man timuitat.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ahí",
+      "nos",
+      "vemos"
+    ],
+    "wordBank": [
+      "Ahí",
+      "nos",
+      "vemos",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "¡Niawa!",
+    "character": "Neutral.svg",
+    "correct": [
+      "¡Ya",
+      "me",
+      "voy!"
+    ],
+    "wordBank": [
+      "¡Ya",
+      "me",
+      "voy!",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Naja niwitz ka Kuskatan.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Yo",
+      "vengo",
+      "de",
+      "El",
+      "Salvador"
+    ],
+    "wordBank": [
+      "Yo",
+      "vengo",
+      "de",
+      "El",
+      "Salvador",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Nuteku Tiut ma metztajpia.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Que",
+      "Dios",
+      "te",
+      "cuide"
+    ],
+    "wordBank": [
+      "Que",
+      "Dios",
+      "te",
+      "cuide",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 1,
+    "prompt": "Yuyumuka nuyulu.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Mi",
+      "corazón",
+      "está",
+      "emocionado"
+    ],
+    "wordBank": [
+      "Mi",
+      "corazón",
+      "está",
+      "emocionado",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Base negra con otros colores o canas.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Tiltituk"
+    ],
+    "wordBank": [
+      "Tiltituk",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Plateado (como si fuera gris).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Kuneshnaj"
+    ],
+    "wordBank": [
+      "Kuneshnaj",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Rojo pálido o desteñido.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Achiltik"
+    ],
+    "wordBank": [
+      "Achiltik",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Rosado suave o tono pastel.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Kuchiltikchin"
+    ],
+    "wordBank": [
+      "Kuchiltikchin",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Base verde con otros colores (multicolor).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Shushuwishtuk"
+    ],
+    "wordBank": [
+      "Shushuwishtuk",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Dorado (como si fuera amarillo).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Kutultik"
+    ],
+    "wordBank": [
+      "Kutultik",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Base morada con otros colores.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Pushawatuk"
+    ],
+    "wordBank": [
+      "Pushawatuk",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Amarillo pálido o sin vitalidad.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Atultik"
+    ],
+    "wordBank": [
+      "Atultik",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Base blanca con manchas o hilos de color.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Istastuk"
+    ],
+    "wordBank": [
+      "Istastuk",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Café.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Kupuknaj"
+    ],
+    "wordBank": [
+      "Kupuknaj",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "fill_blank",
+    "stage": 2,
+    "before": "¿",
+    "after": "itachishka mugustuj? (¿Qué color te gusta?)",
+    "correct": "B) Tay",
+    "options": [
+      "A) Ken",
+      "B) Tay"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 2,
+    "before": "Ne",
+    "after": "tutut. (El pájaro verde)",
+    "correct": "A) shushuknaj",
+    "options": [
+      "A) shushuknaj",
+      "B) itachishka shushuknaj"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 2,
+    "before": "Ne wipil",
+    "after": "tiltik. (La blusa es color negro)",
+    "correct": "B) itachishka",
+    "options": [
+      "A) itajtachishka",
+      "B) itachishka"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 2,
+    "before": "¿",
+    "after": "itachishka? (¿Cómo es su apariencia?)",
+    "correct": "A) Ken",
+    "options": [
+      "A) Ken",
+      "B) Tay"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 2,
+    "before": "Naja",
+    "after": "ne itachishka chiltik. (A mí me gusta el color rojo)",
+    "correct": "B) nugustuj",
+    "options": [
+      "A) itachishka",
+      "B) nugustuj"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 2,
+    "before": "Ne lala",
+    "after": ". (La naranja es amarillo pálido)",
+    "correct": "A) atultik",
+    "options": [
+      "A) atultik",
+      "B) tultik"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 2,
+    "before": "Ne",
+    "after": "wipil. (La blusa negra)",
+    "correct": "B) tiltik",
+    "options": [
+      "A) tiltituk",
+      "B) tiltik"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 2,
+    "before": "Ne tzijtzikwini",
+    "after": ". (El saltamontes multicolor/rojo)",
+    "correct": "A) chichilijtuk",
+    "options": [
+      "A) chichilijtuk",
+      "B) chiltik"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 2,
+    "before": "Ne mistun",
+    "after": ". (El gato es blanco con manchas)",
+    "correct": "B) istastuk",
+    "options": [
+      "A) istak",
+      "B) istastuk"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "fill_blank",
+    "stage": 2,
+    "before": "Ne",
+    "after": "kwawit. (El árbol torcido/color madera)",
+    "correct": "A) kupuknaj",
+    "options": [
+      "A) kupuknaj",
+      "B) tultik"
+    ],
+    "hint": ""
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "El pájaro verde suave (pastel).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ne",
+      "shushuknajchin",
+      "tutut"
+    ],
+    "wordBank": [
+      "Ne",
+      "shushuknajchin",
+      "tutut",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Color anaranjado multicolor (base naranja con otros colores).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Itachishka",
+      "achiujtuk"
+    ],
+    "wordBank": [
+      "Itachishka",
+      "achiujtuk",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "La bandera es color azul.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ne",
+      "panti",
+      "itachishka",
+      "susul"
+    ],
+    "wordBank": [
+      "Ne",
+      "panti",
+      "itachishka",
+      "susul",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Yo amanecí con el cabello casi todo blanco (con algunas canas oscuras).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Naja",
+      "nitatwik",
+      "nitzunhistastuk"
+    ],
+    "wordBank": [
+      "Naja",
+      "nitatwik",
+      "nitzunhistastuk",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Pantalón negro pálido o descolorido.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Atiltik",
+      "sala"
+    ],
+    "wordBank": [
+      "Atiltik",
+      "sala",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Muchos colores / Multicolor.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Miak",
+      "itajtachishka"
+    ],
+    "wordBank": [
+      "Miak",
+      "itajtachishka",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "La blusa blanca.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ne",
+      "istak",
+      "wipil"
+    ],
+    "wordBank": [
+      "Ne",
+      "istak",
+      "wipil",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Color rosado multicolor (base rosa con otros colores).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Kuchiltituk",
+      "itachishka"
+    ],
+    "wordBank": [
+      "Kuchiltituk",
+      "itachishka",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "El café tibio (que era caliente y se enfrió).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ne",
+      "kuseseknaj",
+      "atutun"
+    ],
+    "wordBank": [
+      "Ne",
+      "kuseseknaj",
+      "atutun",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "La flor color rosa/rojo multicolor.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ne",
+      "chichilijtuk",
+      "shuchit"
+    ],
+    "wordBank": [
+      "Ne",
+      "chichilijtuk",
+      "shuchit",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Color gris multicolor.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Itachishka",
+      "neshnajtuk"
+    ],
+    "wordBank": [
+      "Itachishka",
+      "neshnajtuk",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Color blanco pálido/desteñido.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Aistak",
+      "itachishka"
+    ],
+    "wordBank": [
+      "Aistak",
+      "itachishka",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "La tortilla base amarilla con otros colores.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ne",
+      "tultituk",
+      "tamal"
+    ],
+    "wordBank": [
+      "Ne",
+      "tultituk",
+      "tamal",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Base azul con otros colores.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Susulwijtuk"
+    ],
+    "wordBank": [
+      "Susulwijtuk",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Celeste.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Kushushuknaj"
+    ],
+    "wordBank": [
+      "Kushushuknaj",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Itachishka kutultik.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Color",
+      "dorado"
+    ],
+    "wordBank": [
+      "Color",
+      "dorado",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Ne wipil itachishka kuchiltikchin.",
+    "character": "Neutral.svg",
+    "correct": [
+      "La",
+      "blusa",
+      "es",
+      "color",
+      "rosado",
+      "suave"
+    ],
+    "wordBank": [
+      "La",
+      "blusa",
+      "es",
+      "color",
+      "rosado",
+      "suave",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Kupuknajtuk sala.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Pantalón",
+      "café",
+      "multicolor"
+    ],
+    "wordBank": [
+      "Pantalón",
+      "café",
+      "multicolor",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Ne tutut itachishka shushuknaj.",
+    "character": "Neutral.svg",
+    "correct": [
+      "El",
+      "pájaro",
+      "es",
+      "color",
+      "verde"
+    ],
+    "wordBank": [
+      "El",
+      "pájaro",
+      "es",
+      "color",
+      "verde",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Chiltikchin.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Rojo",
+      "suave",
+      "(pastel)"
+    ],
+    "wordBank": [
+      "Rojo",
+      "suave",
+      "(pastel)",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Nutzunkal tzunhistak.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Mi",
+      "cabello",
+      "es",
+      "todo",
+      "canoso",
+      "(blanco",
+      "total)"
+    ],
+    "wordBank": [
+      "Mi",
+      "cabello",
+      "es",
+      "todo",
+      "canoso",
+      "(blanco",
+      "total)",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Se tiltituk pelu.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Un",
+      "perro",
+      "negro",
+      "con",
+      "manchas",
+      "de",
+      "colores"
+    ],
+    "wordBank": [
+      "Un",
+      "perro",
+      "negro",
+      "con",
+      "manchas",
+      "de",
+      "colores",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Ne ka ikajku itachishka kushushuwishtuk.",
+    "character": "Neutral.svg",
+    "correct": [
+      "El",
+      "cielo",
+      "es",
+      "celeste",
+      "multicolor"
+    ],
+    "wordBank": [
+      "El",
+      "cielo",
+      "es",
+      "celeste",
+      "multicolor",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Atultik.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Amarillo",
+      "pálido",
+      "(desteñido)"
+    ],
+    "wordBank": [
+      "Amarillo",
+      "pálido",
+      "(desteñido)",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Ne pushawak wipil.",
+    "character": "Neutral.svg",
+    "correct": [
+      "La",
+      "blusa",
+      "morada"
+    ],
+    "wordBank": [
+      "La",
+      "blusa",
+      "morada",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "¿Tay itachishka musala?.",
+    "character": "Neutral.svg",
+    "correct": [
+      "¿Qué",
+      "color",
+      "es",
+      "tu",
+      "pantalón?"
+    ],
+    "wordBank": [
+      "¿Qué",
+      "color",
+      "es",
+      "tu",
+      "pantalón?",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Naja nugustuj ne itachishka kuneshnaj.",
+    "character": "Neutral.svg",
+    "correct": [
+      "A",
+      "mí",
+      "me",
+      "gusta",
+      "el",
+      "color",
+      "plateado"
+    ],
+    "wordBank": [
+      "A",
+      "mí",
+      "me",
+      "gusta",
+      "el",
+      "color",
+      "plateado",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Achiltik.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Rojo",
+      "desteñido"
+    ],
+    "wordBank": [
+      "Rojo",
+      "desteñido",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Kupuknajtuk.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Base",
+      "café",
+      "con",
+      "otros",
+      "colores"
+    ],
+    "wordBank": [
+      "Base",
+      "café",
+      "con",
+      "otros",
+      "colores",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Ne tutut itachishka susul.",
+    "character": "Neutral.svg",
+    "correct": [
+      "El",
+      "pájaro",
+      "es",
+      "azul"
+    ],
+    "wordBank": [
+      "El",
+      "pájaro",
+      "es",
+      "azul",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Base anaranjada con otros colores (multicolor).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Achiujtuk"
+    ],
+    "wordBank": [
+      "Achiujtuk",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Dorado (como si fuera amarillo).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Kutultik"
+    ],
+    "wordBank": [
+      "Kutultik",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Rojo pálido o desteñido.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Achiltik"
+    ],
+    "wordBank": [
+      "Achiltik",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Verde suave o tono pastel.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Shushuknajchin"
+    ],
+    "wordBank": [
+      "Shushuknajchin",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Base gris con manchas o hilos de color.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Neshnajtuk"
+    ],
+    "wordBank": [
+      "Neshnajtuk",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Blanco pálido (deslavado).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Aistak"
+    ],
+    "wordBank": [
+      "Aistak",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Base rosada multicolor.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Kuchiltituk"
+    ],
+    "wordBank": [
+      "Kuchiltituk",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Negro pálido o sin vitalidad.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Atiltik"
+    ],
+    "wordBank": [
+      "Atiltik",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Color café.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Kupuknaj"
+    ],
+    "wordBank": [
+      "Kupuknaj",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Plateado (como si fuera gris).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Kuneshnaj"
+    ],
+    "wordBank": [
+      "Kuneshnaj",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 2,
+    "prompt": "Si una persona tiene cabello negro pero le están saliendo canas, su cabello es:",
+    "character": "Neutral.svg",
+    "correct": "B) Tiltituk",
+    "options": [
+      "A) Tiltik",
+      "B) Tiltituk"
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 2,
+    "prompt": "¿Cómo preguntarías \"¿Cómo es su apariencia?\"?",
+    "character": "Neutral.svg",
+    "correct": "B) ¿Ken itachishka?",
+    "options": [
+      "A) ¿Tay itachishka?",
+      "B) ¿Ken itachishka?"
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 2,
+    "prompt": "Para decir \"pájaro verde\" anteponiendo el color, la forma correcta es:",
+    "character": "Neutral.svg",
+    "correct": "A) Ne shushuknaj tutut",
+    "options": [
+      "A) Ne shushuknaj tutut",
+      "B) Ne tutut shushuknaj"
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 2,
+    "prompt": "El prefijo \"KU-\" se utiliza para indicar:",
+    "character": "Neutral.svg",
+    "correct": "B) \"Como si fuera\" un color",
+    "options": [
+      "A) Un color suave",
+      "B) \"Como si fuera\" un color"
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 2,
+    "prompt": "Un perro que es negro pero tiene manchas blancas es:",
+    "character": "Neutral.svg",
+    "correct": "A) Tiltituk",
+    "options": [
+      "A) Tiltituk",
+      "B) Atiltik"
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 2,
+    "prompt": "¿Qué palabra significa \"muchos colores\" o \"multicolor\"?",
+    "character": "Neutral.svg",
+    "correct": "B) Miak itajtachishka",
+    "options": [
+      "A) Itachishka",
+      "B) Miak itajtachishka"
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 2,
+    "prompt": "Para decir \"La blusa es color negro\" usando el posesivo, se dice:",
+    "character": "Neutral.svg",
+    "correct": "A) Ne wipil itachishka tiltik",
+    "options": [
+      "A) Ne wipil itachishka tiltik",
+      "B) Ne tiltik wipil"
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 2,
+    "prompt": "El sufijo \"-CHIN\" al final de un color indica:",
+    "character": "Neutral.svg",
+    "correct": "B) Un tono suave o pastel",
+    "options": [
+      "A) Un tono pálido",
+      "B) Un tono suave o pastel"
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 2,
+    "prompt": "Si una camisa roja se ha desteñido por las lavadas, el color es:",
+    "character": "Neutral.svg",
+    "correct": "B) Achiltik",
+    "options": [
+      "A) Chiltikchin",
+      "B) Achiltik"
+    ]
+  },
+  {
+    "type": "select_translation",
+    "stage": 2,
+    "prompt": "¿Qué significa la pregunta \"¿Tay itachishka mugustuj?\"?",
+    "character": "Neutral.svg",
+    "correct": "A) ¿Qué color te gusta?",
+    "options": [
+      "A) ¿Qué color te gusta?",
+      "B) ¿Cómo es el color que te gusta?"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "La bandera es color azul.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ne",
+      "panti",
+      "itachishka",
+      "susul"
+    ],
+    "wordBank": [
+      "Ne",
+      "panti",
+      "itachishka",
+      "susul",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Color gris multicolor (base gris con otros colores).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Itachishka",
+      "neshnajtuk"
+    ],
+    "wordBank": [
+      "Itachishka",
+      "neshnajtuk",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "El zacate reverdecido (base verde con otros colores).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ne",
+      "shushuwishtuk",
+      "tzakat"
+    ],
+    "wordBank": [
+      "Ne",
+      "shushuwishtuk",
+      "tzakat",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "A mí me gusta el color plateado.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Naja",
+      "nugustuj",
+      "ne",
+      "itachishka",
+      "kuneshnaj"
+    ],
+    "wordBank": [
+      "Naja",
+      "nugustuj",
+      "ne",
+      "itachishka",
+      "kuneshnaj",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "La naranja amarillo pálido (todavía tierna).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ne",
+      "lala",
+      "atultik"
+    ],
+    "wordBank": [
+      "Ne",
+      "lala",
+      "atultik",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Color celeste multicolor.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Itachishka",
+      "kushushuwishtuk"
+    ],
+    "wordBank": [
+      "Itachishka",
+      "kushushuwishtuk",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "La blusa negra.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ne",
+      "tiltik",
+      "wipil"
+    ],
+    "wordBank": [
+      "Ne",
+      "tiltik",
+      "wipil",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "La flor color rosa/rojo multicolor.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ne",
+      "chichilijtuk",
+      "shuchit"
+    ],
+    "wordBank": [
+      "Ne",
+      "chichilijtuk",
+      "shuchit",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Yo amanecí con el cabello casi todo blanco (canoso).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Naja",
+      "nitatwik",
+      "nitzunhistastuk"
+    ],
+    "wordBank": [
+      "Naja",
+      "nitatwik",
+      "nitzunhistastuk",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "La blusa blanca.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ne",
+      "istak",
+      "wipil"
+    ],
+    "wordBank": [
+      "Ne",
+      "istak",
+      "wipil",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Base azul con otros colores (multicolor).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Susulwijtuk"
+    ],
+    "wordBank": [
+      "Susulwijtuk",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "El café tibio (que se enfrió).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ne",
+      "kuseseknaj",
+      "atutun"
+    ],
+    "wordBank": [
+      "Ne",
+      "kuseseknaj",
+      "atutun",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Color morado multicolor.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Pushawatuk",
+      "itachishka"
+    ],
+    "wordBank": [
+      "Pushawatuk",
+      "itachishka",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "La flor color rojo suave (pastel).",
+    "character": "Neutral.svg",
+    "correct": [
+      "Ne",
+      "chiltikchin",
+      "shuchit"
+    ],
+    "wordBank": [
+      "Ne",
+      "chiltikchin",
+      "shuchit",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Color blanco pálido o desteñido.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Aistak",
+      "itachishka"
+    ],
+    "wordBank": [
+      "Aistak",
+      "itachishka",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Itachishka kutultik.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Color",
+      "dorado"
+    ],
+    "wordBank": [
+      "Color",
+      "dorado",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Atiltik sala.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Pantalón",
+      "negro",
+      "pálido",
+      "(desteñido)"
+    ],
+    "wordBank": [
+      "Pantalón",
+      "negro",
+      "pálido",
+      "(desteñido)",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Ne tutut itachishka shushuknaj.",
+    "character": "Neutral.svg",
+    "correct": [
+      "El",
+      "pájaro",
+      "es",
+      "color",
+      "verde"
+    ],
+    "wordBank": [
+      "El",
+      "pájaro",
+      "es",
+      "color",
+      "verde",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Kupuknajtuk.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Base",
+      "café",
+      "con",
+      "otros",
+      "colores"
+    ],
+    "wordBank": [
+      "Base",
+      "café",
+      "con",
+      "otros",
+      "colores",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Chiltikchin.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Rojo",
+      "suave",
+      "(pastel)"
+    ],
+    "wordBank": [
+      "Rojo",
+      "suave",
+      "(pastel)",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "¿Tay itachishka?.",
+    "character": "Neutral.svg",
+    "correct": [
+      "¿Qué",
+      "color",
+      "es?"
+    ],
+    "wordBank": [
+      "¿Qué",
+      "color",
+      "es?",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Sinti miak itajtachishka.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Maíz",
+      "multicolor"
+    ],
+    "wordBank": [
+      "Maíz",
+      "multicolor",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Kuchiltikchin.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Rosado",
+      "suave",
+      "(pastel)"
+    ],
+    "wordBank": [
+      "Rosado",
+      "suave",
+      "(pastel)",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Nutzunkal tzunhistak.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Mi",
+      "cabello",
+      "es",
+      "todo",
+      "canoso",
+      "(blanco",
+      "total)"
+    ],
+    "wordBank": [
+      "Mi",
+      "cabello",
+      "es",
+      "todo",
+      "canoso",
+      "(blanco",
+      "total)",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Ne pushawak wipil.",
+    "character": "Neutral.svg",
+    "correct": [
+      "La",
+      "blusa",
+      "morada"
+    ],
+    "wordBank": [
+      "La",
+      "blusa",
+      "morada",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Se tiltituk pelu.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Un",
+      "perro",
+      "negro",
+      "con",
+      "manchas",
+      "(canas",
+      "o",
+      "colores)"
+    ],
+    "wordBank": [
+      "Un",
+      "perro",
+      "negro",
+      "con",
+      "manchas",
+      "(canas",
+      "o",
+      "colores)",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Ne ka ikajku itachishka kushushuwishtuk.",
+    "character": "Neutral.svg",
+    "correct": [
+      "El",
+      "cielo",
+      "es",
+      "celeste",
+      "multicolor"
+    ],
+    "wordBank": [
+      "El",
+      "cielo",
+      "es",
+      "celeste",
+      "multicolor",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Atultik.",
+    "character": "Neutral.svg",
+    "correct": [
+      "Amarillo",
+      "pálido"
+    ],
+    "wordBank": [
+      "Amarillo",
+      "pálido",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Ne shushuknaj tutut.",
+    "character": "Neutral.svg",
+    "correct": [
+      "El",
+      "pájaro",
+      "verde"
+    ],
+    "wordBank": [
+      "El",
+      "pájaro",
+      "verde",
+      "extra1",
+      "extra2"
+    ]
+  },
+  {
+    "type": "translate",
+    "stage": 2,
+    "prompt": "Naja nugustuj ne itachishka chiltik.",
+    "character": "Neutral.svg",
+    "correct": [
+      "A",
+      "mí",
+      "me",
+      "gusta",
+      "el",
+      "color",
+      "rojo"
+    ],
+    "wordBank": [
+      "A",
+      "mí",
+      "me",
+      "gusta",
+      "el",
+      "color",
+      "rojo",
+      "extra1",
+      "extra2"
+    ]
+  }
+]
