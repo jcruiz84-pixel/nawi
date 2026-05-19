@@ -1,295 +1,406 @@
-import re
 import json
 import random
+import re
+import unicodedata
+from pathlib import Path
 
 random.seed(11)
 
+LESSON_DIR = Path("Lecciones")
+LESSONS = [
+    "Aprende a presentarte.txt",
+    "Los colores.txt",
+    "Los números.txt",
+    "Las cuentas.txt",
+    "La familia.txt",
+    "Los animales.txt",
+    "La comida y frutas.txt",
+    "Partes del cuerpo.txt",
+    "Profesiones y oficios.txt",
+    "Los adjetivos.txt",
+    "Los adverbios.txt",
+    "Los plurales.txt",
+]
+
 SPANISH_WORDS = {
-    'a', 'adiós', 'al', 'apellido', 'bien', 'casa', 'ciudad', 'como', 'con', 'color', 'corazón', 'de', 'del', 'dice', 'dicho', 'dios', 'el', 'ella',
-    'anaranjada', 'base', 'emocionado', 'en', 'es', 'estoy', 'frase', 'fuera', 'gris', 'gusta', 'hilos', 'la', 'las',
-    'llamas', 'lo', 'los', 'manchas', 'me', 'mediodía', 'mi', 'multicolor', 'muchas', 'muy', 'nos', 'o', 'ojalá', 'otros', 'pájaro',
-    'pastel', 'pueblo', 'que', 'qué', 'saludo', 'si', 'significa', 'siente', 'suave', 'te', 'tono', 'tu',
-    'tú', 'un', 'una', 'va', 'verde', 'vengo', 'vemos', 'vete', 'y', 'yo',
-    'agradezco', 'ahí', 'amarilla', 'amarillo', 'anaranjado', 'azul', 'bandera', 'bienvenido',
-    'blanca', 'blanco', 'blusa', 'buen', 'buenas', 'buenos', 'cabello', 'café', 'caliente', 'canas', 'canoso',
-    'celeste', 'cielo', 'colores', 'cosquilleo', 'cuida', 'cuide', 'desteñido', 'domingo',
-    'dónde', 'dorado', 'enfrió', 'está', 'estás', 'flor', 'forma', 'gato', 'gracias', 'hogar', 'llorando',
-    'madera', 'mañana', 'morado', 'morada', 'negra', 'negro', 'no', 'noches',
-    'naranja', 'pálido', 'pantalón', 'perro', 'plateado', 'primero', 'profesor', 'pues',
-    'rojo', 'rosa', 'rosado', 'salvador', 'saltamontes', 'santo', 'señor', 'señora',
-    'significado', 'todo', 'total', 'triste', 'tristellorando', 'veamos', 'venido', 'vienes', 'vives', 'voy', 'ya', 'zacate'
+    "a", "adios", "adiós", "agua", "al", "algo", "amarillo", "animal", "apellido",
+    "arriba", "azul", "bandera", "bien", "blanco", "buen", "buenas", "buenos",
+    "cabello", "cafe", "café", "caliente", "canas", "casa", "celeste", "ciudad",
+    "color", "colores", "como", "cómo", "con", "corazon", "corazón", "de", "del",
+    "dice", "dios", "donde", "dónde", "el", "ella", "en", "es", "esta", "está",
+    "estas", "estás", "estoy", "familia", "flor", "forma", "gato", "gracias",
+    "gris", "hogar", "la", "las", "llamas", "me", "mi", "morado", "muchas",
+    "mucho", "muy", "negro", "no", "nos", "pajaro", "pájaro", "palido", "pálido",
+    "pantalon", "pantalón", "perro", "plateado", "poco", "pueblo", "que", "qué",
+    "rojo", "salvador", "señor", "si", "sí", "significa", "te", "tu", "tú", "un",
+    "una", "verde", "vengo", "vemos", "voy", "y", "ya", "yo",
 }
 
-def clean_option_text(text):
-    text = text.replace('◦', '').strip()
-    text = re.sub(r'^[A-C]\)', '', text).strip()
-    return clean_answer_option(text)
 
-def normalize_answer_marker(text):
-    text = re.sub(r'\(.*Correcta.*\)', '', text, flags=re.IGNORECASE).strip()
-    text = re.sub(r'^Respuesta.*?:', '', text, flags=re.IGNORECASE).strip()
-    text = re.sub(r'^Respuesta', '', text, flags=re.IGNORECASE).strip()
-    return clean_answer_option(text)
+def normalize_name(text):
+    return unicodedata.normalize("NFC", text)
+
+
+def find_lesson_file(filename):
+    target = normalize_name(filename)
+    for path in LESSON_DIR.iterdir():
+        if normalize_name(path.name) == target:
+            return path
+    raise FileNotFoundError(f"No se encontró {LESSON_DIR / filename}")
+
+
+def clean_markup(text):
+    text = text.replace("**", "")
+    text = text.replace("“", '"').replace("”", '"')
+    return re.sub(r"\s+", " ", text).strip()
+
 
 def clean_answer_option(text):
-    text = re.sub(r'\s+', ' ', text).strip()
-    text = re.sub(r'\.+$', '', text).strip()
+    text = clean_markup(text.replace("◦", ""))
+    text = re.sub(r"^\*\s*", "", text).strip()
+    text = re.sub(r"^[A-C]\)", "", text).strip()
+    text = re.sub(r"\.+$", "", text).strip()
     return text
 
+
 def normalize_for_compare(text):
-    return re.sub(r'\s+', ' ', text).strip().lower()
+    text = unicodedata.normalize("NFKD", clean_markup(text)).encode("ascii", "ignore").decode("ascii")
+    return re.sub(r"\s+", " ", text).strip().lower()
+
+
+def token_key(text):
+    return normalize_for_compare(text).strip("'")
+
 
 def add_unique(items, value):
     value = clean_answer_option(value)
-    if value and normalize_for_compare(value) not in {normalize_for_compare(item) for item in items}:
+    if not value:
+        return
+    seen = {normalize_for_compare(item) for item in items}
+    if normalize_for_compare(value) not in seen:
         items.append(value)
 
-def answer_shape(text):
-    tokens = re.findall(r"[A-Za-zÁÉÍÓÚÜÑáéíóúüñ']+", text)
-    return 'sentence' if len(tokens) >= 2 else 'word'
 
-def has_same_answer_shape(text, reference):
-    return answer_shape(text) == answer_shape(reference)
+def strip_quotes(text):
+    return clean_markup(text).strip('"').strip()
 
-def classify_language(text, nawat_vocab):
-    text = text.strip()
+
+def has_translation_separator(text):
+    return "—" in text or re.search(r"\s-\s", text)
+
+
+def seed_spanish_score(text, spanish_vocab=None):
+    spanish_vocab = spanish_vocab or SPANISH_WORDS
     tokens = re.findall(r"[A-Za-zÁÉÍÓÚÜÑáéíóúüñ']+", text.lower())
-    if not tokens:
-        return 'spanish'
-
-    nawat_hits = sum(1 for token in tokens if token.strip("'") in nawat_vocab)
-    spanish_hits = sum(1 for token in tokens if token in SPANISH_WORDS)
-
-    if re.search(r'[áéíóúÁÉÍÓÚñÑ]', text) or spanish_hits > 0:
-        return 'spanish'
-    if nawat_hits >= max(1, len(tokens) / 2):
-        return 'nawat'
-    return 'nawat'
-
-def seed_spanish_score(text):
-    tokens = re.findall(r"[A-Za-zÁÉÍÓÚÜÑáéíóúüñ']+", text.lower())
-    score = sum(1 for token in tokens if token in SPANISH_WORDS)
-    if re.search(r'[áéíóúÁÉÍÓÚñÑ]', text):
+    score = sum(1 for token in tokens if token_key(token) in spanish_vocab or token in spanish_vocab)
+    if re.search(r"[áéíóúÁÉÍÓÚñÑ¿¡]", text):
         score += 1
     return score
 
-def has_translation_separator(text):
-    return '—' in text or re.search(r'\s-\s', text)
 
-def split_translation_pair(text):
-    parts = text.split('—', 1) if '—' in text else re.split(r'\s-\s', text, maxsplit=1)
+def split_translation_pair(text, section_title=""):
+    parts = text.split("—", 1) if "—" in text else re.split(r"\s-\s", text, maxsplit=1)
     if len(parts) != 2:
         return None
 
-    left = parts[0].strip().strip('"')
-    right = parts[1].strip().strip('"')
-    left_score = seed_spanish_score(left)
-    right_score = seed_spanish_score(right)
+    left = strip_quotes(parts[0])
+    right = strip_quotes(parts[1])
+    title = section_title.lower()
+    if re.search(r"nawat.*español", title):
+        return {"nawat": left, "spanish": right}
+    if re.search(r"español.*nawat", title):
+        return {"nawat": right, "spanish": left}
+    if seed_spanish_score(left) > seed_spanish_score(right):
+        return {"nawat": right, "spanish": left}
+    return {"nawat": left, "spanish": right}
 
-    if left_score > right_score:
-        return { 'nawat': right, 'spanish': left }
-    return { 'nawat': left, 'spanish': right }
 
-def same_language_options(options, correct_ans, distractor_vocab, nawat_vocab, target_count=3):
+def extract_correct_answer(option_text):
+    text = clean_answer_option(option_text)
+    lower = text.lower()
+
+    if lower.startswith("respuesta"):
+        return re.sub(r"^respuesta\s*:?", "", text, flags=re.IGNORECASE).strip()
+
+    precise = re.search(r"\((?:respuesta\s+)?correcta\s*:\s*([^)]+)\)", text, flags=re.IGNORECASE)
+    if precise:
+        return clean_answer_option(precise.group(1))
+
+    if re.search(r"\((?:respuesta\s+)?correcta\b", text, flags=re.IGNORECASE):
+        return clean_answer_option(re.sub(r"\([^)]*\)", "", text))
+
+    return None
+
+
+def clean_visible_option(option_text):
+    text = clean_answer_option(option_text)
+    text = re.sub(r"^respuesta\s*:?", "", text, flags=re.IGNORECASE).strip()
+    text = re.sub(r"\([^)]*(?:respuesta\s+)?correcta[^)]*\)", "", text, flags=re.IGNORECASE).strip()
+    return clean_answer_option(text)
+
+
+def answer_shape(text):
+    tokens = re.findall(r"[A-Za-zÁÉÍÓÚÜÑáéíóúüñ']+", text)
+    return "sentence" if len(tokens) >= 2 else "word"
+
+
+def classify_language(text, nawat_vocab, spanish_vocab):
+    tokens = re.findall(r"[A-Za-zÁÉÍÓÚÜÑáéíóúüñ']+", text.lower())
+    if not tokens:
+        return "spanish"
+
+    normalized = [token_key(token) for token in tokens]
+    nawat_hits = sum(1 for token in normalized if token in nawat_vocab)
+    spanish_hits = sum(1 for token in normalized if token in spanish_vocab)
+
+    if re.search(r"[áéíóúÁÉÍÓÚñÑ¿¡]", text):
+        spanish_hits += 1
+    if spanish_hits > nawat_hits:
+        return "spanish"
+    if nawat_hits:
+        return "nawat"
+    return "spanish" if any(token in SPANISH_WORDS for token in normalized) else "nawat"
+
+
+def same_language_options(options, correct_ans, distractor_vocab, nawat_vocab, spanish_vocab, target_count=3):
     correct_ans = clean_answer_option(correct_ans)
-    language = classify_language(correct_ans, nawat_vocab)
-    candidates = distractor_vocab[language]
+    language = classify_language(correct_ans, nawat_vocab, spanish_vocab)
+    shape = answer_shape(correct_ans)
     normalized_correct = normalize_for_compare(correct_ans)
     filtered = []
 
     add_unique(filtered, correct_ans)
     for opt in options:
-        opt = clean_answer_option(opt)
+        opt = clean_visible_option(opt)
         if normalize_for_compare(opt) == normalized_correct:
             continue
-        if classify_language(opt, nawat_vocab) == language and has_same_answer_shape(opt, correct_ans):
+        if classify_language(opt, nawat_vocab, spanish_vocab) == language and answer_shape(opt) == shape:
             add_unique(filtered, opt)
 
+    candidates = list(distractor_vocab[language])
     random.shuffle(candidates)
     for fake in candidates:
-        fake = clean_answer_option(fake)
         if len(filtered) >= target_count:
             break
-        if (
-            normalize_for_compare(fake) != normalized_correct
-            and classify_language(fake, nawat_vocab) == language
-            and has_same_answer_shape(fake, correct_ans)
-        ):
+        if normalize_for_compare(fake) != normalized_correct and answer_shape(fake) == shape:
             add_unique(filtered, fake)
 
     return filtered[:target_count]
 
+
+def pair_from_prompt_answer(question, answer, section_title):
+    prompt = strip_quotes(question)
+    answer = clean_answer_option(answer)
+    title = section_title.lower()
+    if not prompt or not answer:
+        return None
+    if re.search(r"nawat.*español", title):
+        return {"nawat": prompt, "spanish": answer}
+    if re.search(r"español.*nawat", title):
+        return {"nawat": answer, "spanish": prompt}
+    return None
+
+
+def get_blocks(section):
+    lines = [line.strip() for line in section.splitlines() if line.strip()]
+    if not lines:
+        return "", []
+
+    section_title = lines[0]
+    blocks = []
+    current = []
+    for line in lines[1:]:
+        match_num = re.match(r"^(\d+)[\.\s]+(.*)", line)
+        if match_num:
+            if current:
+                blocks.append(current)
+            current = [clean_markup(line)]
+        elif current and (line.startswith("◦") or re.match(r"^\*?\s*[A-C]\)", line)):
+            current.append(clean_markup(line))
+    if current:
+        blocks.append(current)
+    return section_title, blocks
+
+
+def parse_question_line(line):
+    match = re.match(r"^(\d+)[\.\s]+(.*)", line)
+    return clean_markup(match.group(2)) if match else ""
+
+
 def parse_file(filename, stage_id):
-    exercises = []
-    with open(filename, 'r', encoding='utf-8') as f:
-        content = f.read()
-    
-    sections = re.split(r'Sección \d+:', content)
-    
-    # First pass: collect vocabulary to use as distractors
-    nawat_vocab = set()
+    path = find_lesson_file(filename)
+    content = path.read_text(encoding="utf-8")
+    sections = [sec.strip() for sec in re.split(r"(?=Sección\s+\d+:)", content) if sec.strip()]
+
+    pair_bank = []
     raw_options = []
-    distractor_vocab = {
-        'nawat': [],
-        'spanish': []
-    }
-    
-    for sec in sections[1:]:
-        lines = sec.strip().split('\n')
-        for line in lines[1:]:
-            line = line.strip()
-            match = re.match(r'^(\d+)\s+(.*)', line)
-            if match:
-                text = match.group(2)
-                if has_translation_separator(text):
-                    pair = split_translation_pair(text)
+    for section in sections:
+        section_title, blocks = get_blocks(section)
+        for block in blocks:
+            question = parse_question_line(block[0])
+            if has_translation_separator(question):
+                pair = split_translation_pair(question, section_title)
+                if pair:
+                    pair_bank.append(pair)
+            for opt in block[1:]:
+                correct = extract_correct_answer(opt)
+                if correct:
+                    pair = pair_from_prompt_answer(question, correct, section_title)
                     if pair:
-                        for word in pair['nawat'].split():
-                            nawat_vocab.add(re.sub(r'[^\w]', '', word.lower()))
-                        add_unique(distractor_vocab['nawat'], pair['nawat'])
-                        add_unique(distractor_vocab['spanish'], pair['spanish'])
-            elif line.startswith('◦') or re.match(r'^[A-C]\)', line):
-                opt_text = clean_option_text(line)
-                opt_clean = normalize_answer_marker(opt_text)
-                if not opt_clean.lower().startswith("respuesta"):
-                    raw_options.append(opt_clean)
+                        pair_bank.append(pair)
+                    add_unique(raw_options, correct)
+                else:
+                    add_unique(raw_options, clean_visible_option(opt))
 
-    # Filter out empty strings
-    nawat_vocab = [w for w in nawat_vocab if w]
-    nawat_vocab_set = set(nawat_vocab)
-    for opt_clean in raw_options:
-        language = classify_language(opt_clean, nawat_vocab_set)
-        add_unique(distractor_vocab[language], opt_clean)
-    distractor_vocab = {
-        language: [item for item in items if item]
-        for language, items in distractor_vocab.items()
-    }
-    word_pools = {
-        'nawat': [
-            word for word in nawat_vocab
-            if classify_language(word, nawat_vocab_set) == 'nawat'
-        ],
-        'spanish': []
-    }
-    for item in distractor_vocab['spanish']:
-        for token in item.split():
-            token = token.strip()
-            if not re.search(r"[A-Za-zÁÉÍÓÚÜÑáéíóúüñ']", token):
-                continue
-            if classify_language(token, nawat_vocab_set) == 'spanish':
-                add_unique(word_pools['spanish'], token)
+    nawat_vocab = set()
+    spanish_vocab = set(SPANISH_WORDS)
+    distractor_vocab = {"nawat": [], "spanish": []}
 
-    # Second pass: parse exercises
-    for sec in sections[1:]:
-        lines = sec.strip().split('\n')
-        if not lines: continue
-        
-        ex_blocks = []
-        current_ex = []
-        
-        for line in lines[1:]:
-            line = line.strip()
-            if not line: continue
-            
-            match_num = re.match(r'^(\d+)\s+(.*)', line)
-            if match_num:
-                if current_ex:
-                    ex_blocks.append(current_ex)
-                current_ex = [line]
-            elif line.startswith('◦') or re.match(r'^[A-C]\)', line):
-                current_ex.append(line)
-                
-        if current_ex:
-            ex_blocks.append(current_ex)
-            
-        for block in ex_blocks:
-            q_line = block[0]
-            match = re.match(r'^(\d+)\s+(.*)', q_line)
-            if not match: continue
-            q_text = match.group(2)
-            
-            if len(block) > 1:
-                # Multiple choice
-                options = []
-                correct_ans = None
-                for opt in block[1:]:
-                    opt_text = clean_option_text(opt)
-                    
-                    if '(Correcta)' in opt_text or '(Respuesta correcta' in opt_text or opt_text.lower().startswith("respuesta"):
-                        # If it starts with "Respuesta", remove it
-                        opt_clean = normalize_answer_marker(opt_text)
-                        
-                        correct_ans = opt_clean
-                        if opt_clean:
-                            options.append(opt_clean)
-                    else:
-                        if opt_text:
-                            options.append(opt_text)
-                
-                if not correct_ans and options:
-                    correct_ans = options[0] # Fallback
+    for pair in pair_bank:
+        add_unique(distractor_vocab["nawat"], pair["nawat"])
+        add_unique(distractor_vocab["spanish"], pair["spanish"])
+        for word in re.findall(r"[A-Za-zÁÉÍÓÚÜÑáéíóúüñ']+", pair["nawat"].lower()):
+            nawat_vocab.add(token_key(word))
+        for word in re.findall(r"[A-Za-zÁÉÍÓÚÜÑáéíóúüñ']+", pair["spanish"].lower()):
+            spanish_vocab.add(token_key(word))
 
-                options = same_language_options(options, correct_ans, distractor_vocab, nawat_vocab_set)
+    for option in raw_options:
+        language = classify_language(option, nawat_vocab, spanish_vocab)
+        add_unique(distractor_vocab[language], option)
+
+    word_pool = sorted(nawat_vocab)
+    exercises = []
+    dictionary_pairs = []
+
+    for section in sections:
+        section_title, blocks = get_blocks(section)
+        for block in blocks:
+            question = parse_question_line(block[0])
+            options = []
+            correct_ans = None
+
+            for opt in block[1:]:
+                correct = extract_correct_answer(opt)
+                if correct:
+                    correct_ans = correct
+                    add_unique(options, correct)
+                else:
+                    add_unique(options, clean_visible_option(opt))
+
+            if correct_ans:
+                pair = pair_from_prompt_answer(question, correct_ans, section_title)
+                if pair:
+                    dictionary_pairs.append(pair)
+
+                options = same_language_options(
+                    options,
+                    correct_ans,
+                    distractor_vocab,
+                    nawat_vocab,
+                    spanish_vocab,
+                )
                 random.shuffle(options)
-                
-                if '_______' in q_text:
-                    parts = q_text.split('_______')
-                    ex = {
+
+                if "_______" in question:
+                    before, after = question.split("_______", 1)
+                    exercises.append({
                         "type": "fill_blank",
                         "stage": stage_id,
-                        "before": parts[0].strip(),
-                        "after": parts[1].strip() if len(parts) > 1 else "",
+                        "before": before.strip(),
+                        "after": after.strip(),
                         "correct": correct_ans,
                         "options": options,
-                        "hint": ""
-                    }
+                        "hint": "",
+                    })
                 else:
-                    ex = {
+                    exercises.append({
                         "type": "select_translation",
                         "stage": stage_id,
-                        "prompt": q_text,
+                        "prompt": question,
                         "character": "Neutral.svg",
                         "correct": correct_ans,
-                        "options": options
-                    }
-                exercises.append(ex)
-            else:
-                # Match or translate
-                if has_translation_separator(q_text):
-                    pair = split_translation_pair(q_text)
-                    if pair:
-                        nawat = pair['nawat']
-                        spanish = pair['spanish']
-                        
-                        words = nawat.split()
-                        answer_language = classify_language(' '.join(words), nawat_vocab_set)
-                        word_pool = word_pools[answer_language]
-                        
-                        # Generate 3 fake words in the same language as the answer
-                        fake_words = []
-                        while len(fake_words) < 3 and len(word_pool) > 3:
-                            fake = random.choice(word_pool)
-                            if normalize_for_compare(fake) not in {normalize_for_compare(w) for w in words} and fake not in fake_words:
-                                fake_words.append(fake)
-                                
-                        ex = {
-                            "type": "translate",
-                            "stage": stage_id,
-                            "prompt": spanish,
-                            "character": "Neutral.svg",
-                            "correct": words,
-                            "wordBank": words + fake_words
-                        }
-                        exercises.append(ex)
+                        "options": options,
+                    })
+                continue
 
-    return exercises
+            if has_translation_separator(question):
+                pair = split_translation_pair(question, section_title)
+                if not pair:
+                    continue
+                dictionary_pairs.append(pair)
+                words = pair["nawat"].split()
+                fake_words = []
+                random.shuffle(word_pool)
+                for fake in word_pool:
+                    if len(fake_words) >= 3:
+                        break
+                    if normalize_for_compare(fake) not in {normalize_for_compare(word) for word in words}:
+                        add_unique(fake_words, fake)
 
-ex1 = parse_file('Aprende a presentarte.txt', 1)
-ex2 = parse_file('Los colores.txt', 2)
+                exercises.append({
+                    "type": "translate",
+                    "stage": stage_id,
+                    "prompt": pair["spanish"],
+                    "character": "Neutral.svg",
+                    "correct": words,
+                    "wordBank": words + fake_words,
+                })
 
-all_ex = ex1 + ex2
-print(f"Parsed {len(ex1)} from stage 1, {len(ex2)} from stage 2")
+    return exercises, dictionary_pairs
 
-js_content = f"const EXERCISE_BANK = {json.dumps(all_ex, ensure_ascii=False, indent=2)};\n"
-with open('data.js', 'w', encoding='utf-8') as f:
-    f.write(js_content)
+
+def make_entry_id(nawat, spanish, used):
+    base = re.sub(r"[^a-z0-9]+", "-", normalize_for_compare(nawat)).strip("-") or "entrada"
+    value = base
+    counter = 2
+    while value in used:
+        suffix = re.sub(r"[^a-z0-9]+", "-", normalize_for_compare(spanish)).strip("-")[:12]
+        value = f"{base}-{suffix or counter}"
+        if value in used:
+            value = f"{base}-{counter}"
+        counter += 1
+    used.add(value)
+    return value
+
+
+stage_config = []
+all_exercises = []
+dictionary_by_pair = {}
+
+for stage_id, filename in enumerate(LESSONS, start=1):
+    title = filename[:-4] if filename.endswith(".txt") else filename
+    exercises, pairs = parse_file(filename, stage_id)
+    stage_config.append({"id": stage_id, "title": title})
+    all_exercises.extend(exercises)
+    for pair in pairs:
+        key = (normalize_for_compare(pair["nawat"]), normalize_for_compare(pair["spanish"]))
+        if not key[0] or not key[1]:
+            continue
+        entry = dictionary_by_pair.setdefault(key, {
+            "nawat": pair["nawat"],
+            "spanish": pair["spanish"],
+            "category": "Vocabulario",
+            "stages": [],
+        })
+        if stage_id not in entry["stages"]:
+            entry["stages"].append(stage_id)
+    print(f"Etapa {stage_id}: {title} - {len(exercises)} ejercicios")
+
+used_ids = set()
+dictionary_bank = []
+for entry in dictionary_by_pair.values():
+    dictionary_bank.append({
+        "id": make_entry_id(entry["nawat"], entry["spanish"], used_ids),
+        **entry,
+    })
+
+data_js = (
+    f"const STAGE_CONFIG = {json.dumps(stage_config, ensure_ascii=False, indent=2)};\n\n"
+    f"const EXERCISE_BANK = {json.dumps(all_exercises, ensure_ascii=False, indent=2)};\n"
+)
+Path("data.js").write_text(data_js, encoding="utf-8")
+
+dictionary_js = f"const DICTIONARY_BANK = {json.dumps(dictionary_bank, ensure_ascii=False, indent=2)};\n"
+Path("dictionary_data.js").write_text(dictionary_js, encoding="utf-8")
+
+print(f"Total: {len(all_exercises)} ejercicios, {len(dictionary_bank)} entradas de vocabulario")

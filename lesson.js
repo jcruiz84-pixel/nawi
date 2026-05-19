@@ -11,6 +11,7 @@ let currentExercise = 0;
 let score = 0;
 let mistakes = 0;
 let selectedAnswer = null;
+let pendingLessonFailure = false;
 
 let activeExercises = [];
 let errorBank = [];
@@ -28,10 +29,12 @@ const QUESTIONS_PER_SESSION = 10;
 const VOCABULARY_WORDS_PER_SESSION = 20;
 const MAX_PROTECTORS = 2;
 const MAX_MISTAKES = 3;
-const STAGE_TITLES = {
-    1: 'Aprende a presentarte',
-    2: 'Los colores'
-};
+const STAGE_TITLES = Object.fromEntries(
+    (typeof STAGE_CONFIG !== 'undefined' ? STAGE_CONFIG : [
+        { id: 1, title: 'Aprende a presentarte' },
+        { id: 2, title: 'Los colores' }
+    ]).map(stage => [stage.id, stage.title])
+);
 
 // Match-specific state
 let matchSelected = null;
@@ -118,6 +121,7 @@ function init() {
 
     renderExercise();
     updateProgress();
+    updateLivesDisplay();
 
     document.getElementById('check-btn').addEventListener('click', checkAnswer);
     document.getElementById('continue-btn').addEventListener('click', nextExercise);
@@ -207,7 +211,7 @@ function pickLevelExercises(stage, node) {
     const levelExercises = stageExercises.slice(start, end);
     const shuffled = [...levelExercises];
     shuffle(shuffled);
-    activeExercises = shuffled.slice(0, QUESTIONS_PER_SESSION);
+    activeExercises = shuffled;
 }
 
 function pickErrorReview(stage) {
@@ -386,9 +390,12 @@ function handleMatchClick(card, item) {
                 card.classList.remove('wrong', 'selected');
                 prevCard.classList.remove('wrong', 'selected');
             }, 600);
-            
-            // Mark error
-            recordError(activeExercises[currentExercise]);
+
+            handleMistake(activeExercises[currentExercise]);
+            if (mistakes >= MAX_MISTAKES) {
+                pendingLessonFailure = true;
+                showFeedback(false, 'Respuesta correcta: ' + getCorrectAnswer(activeExercises[currentExercise]));
+            }
         }
     }
 }
@@ -560,20 +567,24 @@ function checkAnswer() {
             removeError(ex);
         }
     } else {
-        recordError(ex);
-        mistakes++;
-    }
-
-    if (!isCorrect && mistakes >= MAX_MISTAKES) {
-        showFailed();
-        return;
+        handleMistake(ex);
     }
 
     const msg = isCorrect
         ? '¡Muy bien! Significa:\n' + getExplanation(ex)
         : 'Respuesta correcta: ' + getCorrectAnswer(ex);
 
+    if (!isCorrect && mistakes >= MAX_MISTAKES) {
+        pendingLessonFailure = true;
+    }
+
     showFeedback(isCorrect, msg);
+}
+
+function handleMistake(ex) {
+    recordError(ex);
+    mistakes = Math.min(mistakes + 1, MAX_MISTAKES);
+    updateLivesDisplay();
 }
 
 function recordError(ex) {
@@ -608,6 +619,7 @@ function getCorrectAnswer(ex) {
         case 'select_translation': return ex.correct;
         case 'fill_blank': return ex.correct;
         case 'translate': return ex.correct.join(' ');
+        case 'match': return ex.pairs.map(pair => `${pair.nawat} = ${pair.spanish}`).join(', ');
         default: return '';
     }
 }
@@ -635,6 +647,11 @@ function hideFeedback() {
 }
 
 function nextExercise() {
+    if (pendingLessonFailure) {
+        showFailed();
+        return;
+    }
+
     currentExercise++;
 
     if (currentExercise >= activeExercises.length) {
@@ -644,6 +661,32 @@ function nextExercise() {
 
     updateProgress();
     renderExercise();
+}
+
+function updateLivesDisplay() {
+    const livesDisplay = document.getElementById('lives-display');
+    if (!livesDisplay) return;
+
+    const livesLeft = Math.max(MAX_MISTAKES - mistakes, 0);
+    livesDisplay.setAttribute('aria-label', `${livesLeft} vidas disponibles`);
+    livesDisplay.replaceChildren();
+
+    for (let i = 0; i < MAX_MISTAKES; i++) {
+        const heart = document.createElement('span');
+        heart.className = 'life-heart';
+        heart.textContent = '♥';
+        heart.setAttribute('aria-hidden', 'true');
+
+        if (i >= livesLeft) {
+            heart.classList.add('lost');
+        }
+
+        if (i === livesLeft && mistakes > 0) {
+            heart.classList.add('just-lost');
+        }
+
+        livesDisplay.appendChild(heart);
+    }
 }
 
 function showComplete(emptyErrorBank = false) {

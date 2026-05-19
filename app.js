@@ -104,6 +104,150 @@ function extractDictionaryPair(ex) {
     return null;
 }
 
+function getStageConfig() {
+    if (typeof STAGE_CONFIG !== 'undefined' && Array.isArray(STAGE_CONFIG)) {
+        return STAGE_CONFIG;
+    }
+    return [
+        { id: 1, title: 'Aprende a presentarte' },
+        { id: 2, title: 'Los colores' }
+    ];
+}
+
+function getStageColor(index) {
+    const colors = [
+        'var(--green)',
+        'var(--salmon)',
+        '#58a6d6',
+        '#d6a84f',
+        '#8f7edb',
+        '#4fb68b',
+        '#d67b4f',
+        '#5a8fbf',
+        '#c05f88',
+        '#73a942',
+        '#b777d1',
+        '#4faaa3'
+    ];
+    return colors[index % colors.length];
+}
+
+function getStarIcon() {
+    return `
+        <svg class="node-icon" viewBox="0 0 24 24" fill="white">
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+        </svg>
+    `;
+}
+
+function getPracticeIcon() {
+    return `
+        <svg class="node-icon" viewBox="0 0 24 24" fill="white">
+            <path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43 1.43 1.43L18.43 19.86l1.43 1.43 1.43-1.43-1.43-1.43 1.43-1.43-1.43-1.43z" />
+        </svg>
+    `;
+}
+
+function getVocabularyIcon() {
+    return `
+        <svg class="node-icon" viewBox="0 0 24 24" fill="white">
+            <path d="M18 2H8a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm-1 18H8a1 1 0 0 1 0-2h9v2zm0-4H8a3 3 0 0 0-1 .17V5a1 1 0 0 1 1-1h9v12z" />
+        </svg>
+    `;
+}
+
+function createStageNode(stageId, nodeId, rowClass, icon, extraClass = '') {
+    const row = document.createElement('div');
+    row.className = `node-row ${rowClass}`;
+
+    const button = document.createElement('button');
+    button.className = `node-btn locked-node ${extraClass}`.trim();
+    button.dataset.nodeId = `${stageId}-${nodeId}`;
+    button.title = nodeId === VOCAB_NODE ? 'Vocabulario' : `Lección ${nodeId}`;
+    button.addEventListener('click', () => {
+        window.location.href = `lesson.html?stage=${stageId}&node=${nodeId}`;
+    });
+    button.innerHTML = icon;
+    row.appendChild(button);
+    return row;
+}
+
+function renderStageMap() {
+    const targetStageView = document.getElementById('stage-view');
+    if (!targetStageView) return;
+
+    targetStageView.replaceChildren();
+    getStageConfig().forEach((stage, index) => {
+        const section = document.createElement('section');
+        section.id = `stage-${stage.id}`;
+        section.className = `stage-section${stage.id === 1 ? '' : ' locked'}`;
+
+        const banner = document.createElement('div');
+        banner.className = 'stage-banner';
+        banner.style.backgroundColor = getStageColor(index);
+
+        const subtitle = document.createElement('div');
+        subtitle.className = 'stage-subtitle';
+        subtitle.textContent = `ETAPA ${stage.id}, SECCIÓN 1`;
+
+        const title = document.createElement('div');
+        title.className = 'stage-title';
+        title.textContent = stage.title;
+        banner.append(subtitle, title);
+
+        const nodes = document.createElement('div');
+        nodes.className = 'nodes-wrapper';
+        nodes.appendChild(createStageNode(stage.id, 1, 'offset-right-1', getStarIcon(), 'active-node'));
+        nodes.appendChild(createStageNode(stage.id, 2, 'offset-right-2', getStarIcon()));
+
+        const activeRow = document.createElement('div');
+        activeRow.className = 'node-row active-row';
+        const character = document.createElement('img');
+        character.src = 'Neutral.svg';
+        character.alt = 'Character';
+        character.className = 'character';
+        const activeWrapper = document.createElement('div');
+        activeWrapper.className = 'node-wrapper-active';
+        const activeButton = document.createElement('button');
+        activeButton.className = 'node-btn active-node locked-node';
+        activeButton.dataset.nodeId = `${stage.id}-3`;
+        activeButton.addEventListener('click', () => {
+            window.location.href = `lesson.html?stage=${stage.id}&node=3`;
+        });
+        activeButton.innerHTML = '<img src="Pluma-06.svg" alt="Nahuatl" class="node-icon" style="filter: brightness(0) invert(1);">';
+        activeWrapper.appendChild(activeButton);
+        activeRow.append(character, activeWrapper);
+        nodes.appendChild(activeRow);
+
+        nodes.appendChild(createStageNode(stage.id, 4, 'offset-left-1', getPracticeIcon()));
+        nodes.appendChild(createStageNode(stage.id, 5, 'offset-left-2', getStarIcon()));
+        nodes.appendChild(createStageNode(stage.id, 6, 'offset-right-1', getVocabularyIcon(), 'vocab-node'));
+
+        section.append(banner, nodes);
+        targetStageView.appendChild(section);
+    });
+}
+
+function renderStageMenu() {
+    const content = document.querySelector('#stage-modal .modal-content');
+    if (!content) return;
+
+    content.replaceChildren();
+    content.style.paddingTop = '20px';
+    getStageConfig().forEach(stage => {
+        const option = document.createElement('div');
+        option.className = 'stage-option';
+        option.dataset.stage = stage.id;
+
+        const title = document.createElement('div');
+        title.className = 'stage-option-title';
+        title.textContent = `Etapa ${stage.id}: ${stage.title}`;
+
+        option.appendChild(title);
+        content.appendChild(option);
+    });
+}
+
 function getDictionaryEntries() {
     if (typeof DICTIONARY_BANK === 'undefined') return [];
     return DICTIONARY_BANK.map(entry => ({
@@ -344,11 +488,16 @@ class NawatUser {
         // Render calendar
         this.renderCalendar();
 
-        // Unlock Stage 2 if Stage 1 is completed
-        const stage2 = document.getElementById('stage-2');
-        if (stage2 && this.completedStages.includes(1)) {
-            stage2.classList.remove('locked');
-        }
+        getStageConfig().forEach(stage => {
+            const stageSection = document.getElementById(`stage-${stage.id}`);
+            if (!stageSection) return;
+
+            if (stage.id === 1 || this.completedStages.includes(stage.id - 1)) {
+                stageSection.classList.remove('locked');
+            } else {
+                stageSection.classList.add('locked');
+            }
+        });
 
         // Unlock individual nodes
         document.querySelectorAll('.node-btn').forEach(btn => {
@@ -467,6 +616,8 @@ class NawatUser {
 // ========================================================
 // Inicialización
 // ========================================================
+renderStageMap();
+renderStageMenu();
 const user = new NawatUser();
 user.updateUI();
 

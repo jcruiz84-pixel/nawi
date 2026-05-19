@@ -57,6 +57,33 @@
     width: 0%;
 }
 
+.lives-display {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+    min-width: 72px;
+    flex-shrink: 0;
+}
+
+.life-heart {
+    color: var(--red);
+    font-size: 1.35rem;
+    font-weight: 900;
+    line-height: 1;
+    text-shadow: 0 2px 0 rgba(178, 59, 47, 0.18);
+    transform-origin: center;
+}
+
+.life-heart.lost {
+    color: var(--gray-border);
+    text-shadow: none;
+}
+
+.life-heart.just-lost {
+    animation: loseHeart 0.45s ease-out;
+}
+
 /* ======= EXERCISE AREA ======= */
 .exercise-area {
     flex: 1;
@@ -506,4 +533,22 @@
     25% { transform: translateX(-6px); }
     50% { transform: translateX(6px); }
     75% { transform: translateX(-4px); }
+}
+
+@keyframes loseHeart {
+    0% {
+        color: var(--red);
+        opacity: 1;
+        transform: scale(1);
+    }
+    35% {
+        color: var(--red);
+        opacity: 1;
+        transform: scale(1.35) rotate(-8deg);
+    }
+    100% {
+        color: var(--gray-border);
+        opacity: 0.55;
+        transform: scale(0.82) rotate(8deg);
+    }
 }
