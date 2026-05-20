@@ -56,7 +56,7 @@ Elige la opción correcta para completar la idea.
 	24	Naja ninemi _______ yek. (Estoy un poco bien)
 	◦	A) sujsul
 	◦	B) chupi (Respuesta correcta)
-	25	_______ nuyulu nemi yek. (Mi corazón está bien)
+	25	_______ nemi yek. (Mi corazón está bien)
 	◦	A) Naja
 	◦	B) Na' / Nuyulu (Respuesta correcta: Nuyulu)
 
