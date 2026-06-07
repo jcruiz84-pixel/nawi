@@ -243,12 +243,18 @@
                     <div class="day-name">S</div>
                     <!-- Days will be generated dynamically by JS -->
                 </div>
+                <div class="calendar-data-actions">
+                    <button class="calendar-data-btn" id="download-user-data-btn" type="button">Descargar datos</button>
+                    <button class="calendar-data-btn calendar-data-btn-secondary" id="upload-user-data-btn" type="button">Subir datos</button>
+                    <input id="upload-user-data-input" type="file" accept="application/json,.json" hidden>
+                </div>
             </div>
 
 
         </div>
     </div>
 
+    <script src="streak.js"></script>
     <script src="data.js"></script>
     <script src="dictionary_data.js"></script>
     <script src="app.js"></script>

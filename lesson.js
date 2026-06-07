@@ -25,8 +25,10 @@ const CORE_NODE_COUNT = 5;
 const VOCAB_NODE = 6;
 const MAX_NODE = 6;
 const QUESTION_POOL_NODES = [1, 2, 3, 5];
-const QUESTIONS_PER_SESSION = 10;
+const NORMAL_QUESTIONS_PER_SESSION = 15;
+const ERROR_REVIEW_QUESTIONS_PER_SESSION = 10;
 const VOCABULARY_WORDS_PER_SESSION = 20;
+const MATCH_PAIRS_PER_QUESTION = 4;
 const MAX_PROTECTORS = 2;
 const MAX_MISTAKES = 3;
 const STAGE_TITLES = Object.fromEntries(
@@ -211,13 +213,27 @@ function pickLevelExercises(stage, node) {
     const levelExercises = stageExercises.slice(start, end);
     const shuffled = [...levelExercises];
     shuffle(shuffled);
-    activeExercises = shuffled;
+    activeExercises = shuffled.slice(0, NORMAL_QUESTIONS_PER_SESSION);
+
+    const matchQuestion = createMatchQuestion(stage);
+    if (matchQuestion) {
+        const insertAt = Math.min(
+            activeExercises.length,
+            Math.floor(Math.random() * NORMAL_QUESTIONS_PER_SESSION)
+        );
+
+        if (activeExercises.length >= NORMAL_QUESTIONS_PER_SESSION) {
+            activeExercises.splice(insertAt, 1, matchQuestion);
+        } else {
+            activeExercises.splice(insertAt, 0, matchQuestion);
+        }
+    }
 }
 
 function pickErrorReview(stage) {
     const stageErrors = errorBank.filter(ex => ex.stage === stage);
     shuffle(stageErrors);
-    activeExercises = stageErrors.slice(0, QUESTIONS_PER_SESSION);
+    activeExercises = stageErrors.slice(0, ERROR_REVIEW_QUESTIONS_PER_SESSION);
 }
 
 function buildVocabularyPractice(stage) {
@@ -250,6 +266,33 @@ function createVocabularyQuestion(entry, entries, direction) {
         character: 'Neutral.svg',
         correct,
         options: [correct, ...uniqueOptions(distractors).slice(0, 3)]
+    };
+}
+
+function createMatchQuestion(stage) {
+    const entries = getVocabularyEntries({ stage });
+    const uniquePairs = [];
+    const seen = new Set();
+
+    entries.forEach(entry => {
+        const nawat = cleanupDictionaryText(entry.nawat);
+        const spanish = cleanupDictionaryText(entry.spanish);
+        const key = `${normalizeText(nawat)}|${normalizeText(spanish)}`;
+        if (!nawat || !spanish || seen.has(key)) return;
+
+        seen.add(key);
+        uniquePairs.push({ nawat, spanish });
+    });
+
+    if (uniquePairs.length < 2) return null;
+
+    shuffle(uniquePairs);
+
+    return {
+        type: 'match',
+        stage,
+        instruction: 'Relaciona cada palabra en nawat con su significado en español',
+        pairs: uniquePairs.slice(0, MATCH_PAIRS_PER_QUESTION)
     };
 }
 
@@ -756,26 +799,8 @@ function showFailed() {
 }
 
 function recordPracticeToday() {
-    const today = getTodayStr();
     saveUserData(data => {
-        data.streak = data.streak || 0;
-        data.protectors = data.protectors || 0;
-        data.dayLog = data.dayLog || {};
-
-        if (data.dayLog[today] === 'practiced') {
-            data.practicedToday = true;
-            data.lastPracticeDate = today;
-            return;
-        }
-
-        data.streak++;
-        data.practicedToday = true;
-        data.lastPracticeDate = today;
-        data.dayLog[today] = 'practiced';
-
-        if (data.streak > 0 && data.streak % 3 === 0 && data.protectors < MAX_PROTECTORS) {
-            data.protectors++;
-        }
+        StreakRules.recordPractice(data);
     });
 }
 
@@ -808,8 +833,7 @@ function shuffle(arr) {
 }
 
 function getTodayStr() {
-    const d = new Date();
-    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    return StreakRules.todayStr();
 }
 
 // ========================================================

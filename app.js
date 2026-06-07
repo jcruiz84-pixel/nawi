@@ -265,107 +265,56 @@ class NawatUser {
         // Intentar cargar datos guardados
         const saved = localStorage.getItem('nawat_user_v2');
         if (saved) {
-            const data = JSON.parse(saved);
-            this.streak = data.streak || 0;
-            this.protectors = data.protectors || 0;
-            this.currentStage = data.currentStage || 1;
-            this.completedStages = data.completedStages || [];
-            this.completedNodes = data.completedNodes || [];
-            this.practicedToday = data.practicedToday || false;
-            this.lastPracticeDate = data.lastPracticeDate || null;
-            // dayLog: { "YYYY-MM-DD": "practiced" | "protector" }
-            this.dayLog = data.dayLog || {};
-            this.simulatedDate = this._todayStr();
+            this._loadFromData(JSON.parse(saved));
             this._reconcileDailyState();
         } else {
-            this.streak = 0;
-            this.protectors = 0;
-            this.currentStage = 1;
-            this.completedStages = [];
-            this.completedNodes = [];
-            this.practicedToday = false;
-            this.lastPracticeDate = null;
-            this.dayLog = {};
-            this.simulatedDate = this._todayStr();
+            this._loadFromData({});
         }
+    }
+
+    _loadFromData(data) {
+        this.streak = Number.isFinite(data.streak) ? data.streak : 0;
+        this.protectors = Math.min(Number.isFinite(data.protectors) ? data.protectors : 0, this.maxProtectors);
+        this.currentStage = Number.isFinite(data.currentStage) ? data.currentStage : 1;
+        this.completedStages = Array.isArray(data.completedStages) ? data.completedStages : [];
+        this.completedNodes = Array.isArray(data.completedNodes) ? data.completedNodes : [];
+        this.practicedToday = Boolean(data.practicedToday);
+        this.lastPracticeDate = data.lastPracticeDate || null;
+        // dayLog: { "YYYY-MM-DD": "practiced" | "protector" | "missed" }
+        this.dayLog = data.dayLog && typeof data.dayLog === 'object' ? data.dayLog : {};
+        this.simulatedDate = data.simulatedDate || this._todayStr();
+        this.calendarYear = null;
+        this.calendarMonth = null;
     }
 
     _todayStr() {
-        const d = new Date();
-        return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+        return StreakRules.todayStr();
     }
 
     _parseDate(str) {
-        const [y, m, d] = str.split('-').map(Number);
-        return new Date(y, m - 1, d);
+        return StreakRules.parseDate(str);
     }
 
     _dateStr(date) {
-        return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+        return StreakRules.todayStr(date);
     }
 
     _addDays(dateStr, days) {
-        const d = this._parseDate(dateStr);
-        d.setDate(d.getDate() + days);
-        return this._dateStr(d);
+        return StreakRules.addDays(dateStr, days);
     }
 
     _daysBetween(startStr, endStr) {
-        if (!startStr || !endStr) return 0;
-        const start = this._parseDate(startStr);
-        const end = this._parseDate(endStr);
-        return Math.floor((end - start) / 86400000);
+        return StreakRules.daysBetween(startStr, endStr);
     }
 
     _reconcileDailyState() {
-        const today = this._todayStr();
-        this.simulatedDate = today;
-
-        if (!this.lastPracticeDate) {
-            this.practicedToday = false;
-            this._save();
-            return;
-        }
-
-        const daysAway = this._daysBetween(this.lastPracticeDate, today);
-        if (daysAway <= 0) {
-            this.practicedToday = this.dayLog[today] === 'practiced';
-            this._save();
-            return;
-        }
-
-        this.practicedToday = false;
-        for (let i = 1; i < daysAway; i++) {
-            const missedDay = this._addDays(this.lastPracticeDate, i);
-            if (this.dayLog[missedDay]) continue;
-
-            if (this.protectors > 0) {
-                this.protectors--;
-                this.dayLog[missedDay] = 'protector';
-            } else {
-                this.dayLog[missedDay] = 'missed';
-                this.streak = 0;
-            }
-        }
-
+        StreakRules.reconcile(this);
         this._save();
     }
 
     // Practicar el día actual
     practiceToday() {
-        if (this.practicedToday) return; // Ya practicó hoy
-
-        this.simulatedDate = this._todayStr();
-        this.streak++;
-        this.practicedToday = true;
-        this.lastPracticeDate = this.simulatedDate;
-        this.dayLog[this.simulatedDate] = 'practiced';
-
-        // Ganar protector cada 7 días de racha
-        if (this.streak > 0 && this.streak % 3 === 0 && this.protectors < this.maxProtectors) {
-            this.protectors++;
-        }
-
+        StreakRules.recordPractice(this);
         this._save();
         this.updateUI();
     }
@@ -426,6 +375,77 @@ class NawatUser {
             dayLog: this.dayLog,
             simulatedDate: this.simulatedDate,
         }));
+    }
+
+    getStoredData() {
+        const saved = localStorage.getItem('nawat_user_v2');
+        return saved ? JSON.parse(saved) : {};
+    }
+
+    getReachedLevel(data = this.getStoredData()) {
+        const currentStage = Number.isFinite(data.currentStage) ? data.currentStage : 1;
+        const completedStages = Array.isArray(data.completedStages) ? data.completedStages : [];
+        const nextStage = completedStages.length > 0 ? Math.max(...completedStages) + 1 : 1;
+        return Math.max(currentStage, nextStage);
+    }
+
+    getExerciseDayCount(data = this.getStoredData()) {
+        const dayLog = data.dayLog && typeof data.dayLog === 'object' ? data.dayLog : {};
+        return Object.values(dayLog).filter(status => status === 'practiced').length;
+    }
+
+    exportData() {
+        const userData = this.getStoredData();
+        const payload = {
+            app: 'Nawi',
+            exportVersion: 1,
+            exportedAt: new Date().toISOString(),
+            summary: {
+                exerciseDays: this.getExerciseDayCount(userData),
+                streakDays: Number.isFinite(userData.streak) ? userData.streak : 0,
+                protectors: Number.isFinite(userData.protectors) ? userData.protectors : 0,
+                reachedLevel: this.getReachedLevel(userData),
+                completedStages: Array.isArray(userData.completedStages) ? userData.completedStages.length : 0,
+                completedLessons: Array.isArray(userData.completedNodes) ? userData.completedNodes.length : 0,
+            },
+            userData,
+        };
+
+        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const date = this._todayStr();
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `nawi-datos-${date}.json`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+    }
+
+    importData(data) {
+        const importedData = data && data.userData ? data.userData : data;
+        if (!importedData || typeof importedData !== 'object' || Array.isArray(importedData)) {
+            throw new Error('El archivo no contiene datos válidos.');
+        }
+
+        const cleanData = {
+            ...importedData,
+            streak: Number.isFinite(importedData.streak) ? importedData.streak : 0,
+            protectors: Math.min(Number.isFinite(importedData.protectors) ? importedData.protectors : 0, this.maxProtectors),
+            currentStage: Number.isFinite(importedData.currentStage) ? importedData.currentStage : 1,
+            completedStages: Array.isArray(importedData.completedStages) ? importedData.completedStages : [],
+            completedNodes: Array.isArray(importedData.completedNodes) ? importedData.completedNodes : [],
+            practicedToday: Boolean(importedData.practicedToday),
+            lastPracticeDate: importedData.lastPracticeDate || null,
+            dayLog: importedData.dayLog && typeof importedData.dayLog === 'object' ? importedData.dayLog : {},
+            simulatedDate: importedData.simulatedDate || this._todayStr(),
+        };
+
+        localStorage.setItem('nawat_user_v2', JSON.stringify(cleanData));
+        this._loadFromData(cleanData);
+        this._reconcileDailyState();
+        this.updateUI();
     }
 
     reset() {
@@ -625,6 +645,9 @@ user.updateUI();
 const streakButton = document.getElementById('streak-button');
 const streakModal = document.getElementById('streak-modal');
 const closeModalBtn = document.getElementById('close-modal-btn');
+const downloadUserDataBtn = document.getElementById('download-user-data-btn');
+const uploadUserDataBtn = document.getElementById('upload-user-data-btn');
+const uploadUserDataInput = document.getElementById('upload-user-data-input');
 
 if (streakButton && streakModal && closeModalBtn) {
     streakButton.addEventListener('click', () => {
@@ -633,6 +656,40 @@ if (streakButton && streakModal && closeModalBtn) {
     });
     closeModalBtn.addEventListener('click', () => {
         streakModal.classList.add('hidden');
+    });
+}
+
+if (downloadUserDataBtn) {
+    downloadUserDataBtn.addEventListener('click', () => {
+        user.exportData();
+    });
+}
+
+if (uploadUserDataBtn && uploadUserDataInput) {
+    uploadUserDataBtn.addEventListener('click', () => {
+        uploadUserDataInput.click();
+    });
+
+    uploadUserDataInput.addEventListener('change', () => {
+        const file = uploadUserDataInput.files && uploadUserDataInput.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = () => {
+            try {
+                user.importData(JSON.parse(reader.result));
+                alert('Tus datos se subieron correctamente.');
+            } catch (error) {
+                alert(error.message || 'No se pudo subir el archivo de datos.');
+            } finally {
+                uploadUserDataInput.value = '';
+            }
+        };
+        reader.onerror = () => {
+            alert('No se pudo leer el archivo de datos.');
+            uploadUserDataInput.value = '';
+        };
+        reader.readAsText(file);
     });
 }
 

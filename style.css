@@ -462,6 +462,32 @@ body {
     text-align: center;
 }
 
+.calendar-data-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.calendar-data-btn {
+    border: none;
+    border-radius: 12px;
+    background: var(--dark-navy);
+    color: var(--white);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.86rem;
+    font-weight: 900;
+    min-height: 44px;
+    padding: 10px 12px;
+}
+
+.calendar-data-btn-secondary {
+    background: var(--gray-bg);
+    color: var(--dark-navy);
+    border: 2px solid var(--gray-border);
+}
+
 .day-name {
     font-weight: 800;
     color: var(--gray-text);
